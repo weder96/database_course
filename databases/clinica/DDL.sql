@@ -57,3 +57,9 @@ create table medical_consultation(
  foreign key (patient_id) references patient(id) 
 );
 
+
+CREATE TABLE check_uncheck(
+ id int primary key identity(1,1) not null,
+ status BIT NOT NULL 
+);
+

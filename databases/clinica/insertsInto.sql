@@ -60,3 +60,7 @@ INSERT INTO [dbo].[medical_consultation]([patient_id],[doctor_id],[data_consulta
 INSERT INTO [dbo].[medical_consultation]([patient_id],[doctor_id],[data_consultation],[description],[status],price)VALUES(7,	3,'2019-02-08 15:00',null,1,400.00);
 INSERT INTO [dbo].[medical_consultation]([patient_id],[doctor_id],[data_consultation],[description],[status],price)VALUES(4,	1,'2019-02-09 11:00',null,2,400.00);
 
+
+insert into check_uncheck(status) values(0);
+insert into check_uncheck(status) values(1);
+
