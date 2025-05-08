@@ -80,16 +80,19 @@ INSERT INTO Categories (name) VALUES ('Probiotics');
 -- 2. Inserindo Fornecedores
 
 
-INSERT INTO Suppliers (name, phone, address) VALUES ('Fornecedor A', '1234-5678', 'Rua A, 123');
-INSERT INTO Suppliers (name, phone, address) VALUES ('Fornecedor B', '2345-6789', 'Rua B, 456');
-INSERT INTO Suppliers (name, phone, address) VALUES ('Fornecedor C', '3456-7890', 'Rua C, 789');
-INSERT INTO Suppliers (name, phone, address) VALUES ('Fornecedor D', '4567-8901', 'Rua D, 101');
-INSERT INTO Suppliers (name, phone, address) VALUES ('Fornecedor E', '5678-9012', 'Rua E, 202');
-INSERT INTO Suppliers (name, phone, address) VALUES ('Fornecedor F', '6789-0123', 'Rua F, 303');
-INSERT INTO Suppliers (name, phone, address) VALUES ('Fornecedor G', '7890-1234', 'Rua G, 404');
-INSERT INTO Suppliers (name, phone, address) VALUES ('Fornecedor H', '8901-2345', 'Rua H, 505');
-INSERT INTO Suppliers (name, phone, address) VALUES ('Fornecedor I', '9012-3456', 'Rua I, 606');
-INSERT INTO Suppliers (name, phone, address) VALUES ('Fornecedor J', '0123-4567', 'Rua J, 707');
+
+INSERT INTO Suppliers (name, phone, address) VALUES ('Fornecedor A', '62 91234-5678', 'Rua A, 123');
+INSERT INTO Suppliers (name, phone, address) VALUES ('Fornecedor B', '62 92345-6789', 'Rua B, 456');
+INSERT INTO Suppliers (name, phone, address) VALUES ('Fornecedor C', '62 93456-7890', 'Rua C, 789');
+INSERT INTO Suppliers (name, phone, address) VALUES ('Fornecedor D', '62 94567-8901', 'Rua D, 101');
+INSERT INTO Suppliers (name, phone, address) VALUES ('Fornecedor E', '62 95678-9012', 'Rua E, 202');
+INSERT INTO Suppliers (name, phone, address) VALUES ('Fornecedor F', '62 96789-0123', 'Rua F, 303');
+INSERT INTO Suppliers (name, phone, address) VALUES ('Fornecedor G', '62 97890-1234', 'Rua G, 404');
+INSERT INTO Suppliers (name, phone, address) VALUES ('Fornecedor H', '62 98901-2345', 'Rua H, 505');
+INSERT INTO Suppliers (name, phone, address) VALUES ('Fornecedor I', '62 99012-3456', 'Rua I, 606');
+INSERT INTO Suppliers (name, phone, address) VALUES ('Fornecedor J', '62 90123-2567', 'Rua J, 707');
+INSERT INTO Suppliers (name, phone, address) VALUES ('Fornecedor K', '62 90123-1167', 'Rua k, 801');
+INSERT INTO Suppliers (name, phone, address) VALUES ('Fornecedor L', '62 90123-9667', 'Rua l, 103');
 
 
 -- 3. Inserindo Medicamentos
@@ -250,8 +253,8 @@ INSERT INTO Sale_Items (sale_id, medication_id, quantity, unit_price) VALUES (17
 
 
 --------------------
-## 15. Vendas em que o total é maior que R$ 100,00
-### Escreva uma consulta para selecionar os IDs das vendas cujo total é maior que R$ 100,00.
+## 15. Vendas em que o total é maior que R$ 80,00
+### Escreva uma consulta para selecionar os IDs das vendas cujo total é maior que R$ 80,00.
 
 
 --------------------
@@ -290,11 +293,49 @@ INSERT INTO Sale_Items (sale_id, medication_id, quantity, unit_price) VALUES (17
 ### Quando um produto é vendido, ### o estoque deve ser decrementado.
 
 --------------------
-## 24: View de Relatório de Vendas
+
+## 24: Teste A trigger Criada
+### Para testar a trigger que foi criada anteriormente (UpdateStockOnSale), você IRÁ criar um procedimento armazenado que insere dados na tabela Sale_Items. 
+## Isso permitirá que você veja se a trigger atualiza corretamente os estoques na tabela Medications após a inserção.
+
+```sql
+CREATE OR ALTER PROCEDURE TestUpdateStockOnSale 
+    @sales_id INT,
+    @medication_id INT,
+    @quantity INT,
+	@unit_price NUMERIC(19,2)
+AS
+BEGIN
+    -- Inserir um novo item de venda na tabela Sale_Items   
+	INSERT INTO Sale_Items (sale_id, medication_id, quantity, unit_price) VALUES (@sales_id, @medication_id, @quantity, @unit_price);
+    
+    -- Opcionalmente, você pode selecionar o novo estoque para ver a atualização
+    SELECT 
+        medication_id,
+        stock 
+    FROM 
+        Medications 
+    WHERE 
+        medication_id = @medication_id;
+END;
+
+
+-- Execute o select Antes de executar o procedimento
+
+SELECT * FROM Medications WHERE medication_id = 1;
+
+-- Testar o procedimento com valores específicos
+EXEC TestUpdateStockOnSale @sales_id = 2,  @medication_id = 1, @quantity = 3 ,@unit_price=25.00;
+
+-- Verificar o estoque do medicamento para confirmar se a trigger funcionou
+SELECT * FROM Medications WHERE medication_id = 1;
+```
+--------------------
+## 25: View de Relatório de Vendas
 ### Crie uma view que mostre um relatório completo das vendas, incluindo o nome do cliente, a data da venda, o total de cada venda e o número total de itens vendidos.
 
 --------------------
-## 25: Join para Medicamentos em Vendas
+## 26: Join para Medicamentos em Vendas
 ### Escreva uma consulta que mostre os detalhes das vendas, incluindo os medicamentos vendidos e seus preços unitários. A consulta deve retornar o nome do medicamento, a data da venda e o total (quantidade * preço unitário).
 
 --------------------
