@@ -9,3 +9,7 @@ SELECT
 	LAST_VALUE(Faturamento_MM) OVER(ORDER BY Data_Fechamento ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS 'Último valor'
 FROM sales
 ORDER BY [Data do Fechamento]
+
+
+
+
