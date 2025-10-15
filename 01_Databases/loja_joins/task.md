@@ -41,21 +41,21 @@ As 20 questões a seguir foram divididas em níveis de dificuldade para guiar se
 
 
 6. Mostre o nome do cliente, a data do pedido e o nome do produto para cada item vendido.
-7. 
-8. Calcule o valor total de cada pedido.
+  
+7. Calcule o valor total de cada pedido.
    Dica: Você precisará agrupar os resultados (GROUP BY) pelo pedido_id e usar a função SUM() sobre uma expressão matemática (quantidade * preco_unitario).
 
-9. Quantos pedidos cada cliente fez?
+8. Quantos pedidos cada cliente fez?
 
-10. Qual o valor total gasto por cada cliente em todos os seus pedidos?
+9.  Qual o valor total gasto por cada cliente em todos os seus pedidos?
 
-11.  Quantos produtos existem em cada categoria?
+10.  Quantos produtos existem em cada categoria?
 
-12. Liste os nomes dos clientes que compraram o produto "Notebook Pro".
+11. Liste os nomes dos clientes que compraram o produto "Notebook Pro".
 
-13. Qual o total de faturamento da loja?
+12. Qual o total de faturamento da loja?
 
-14. Quantos itens (somando as quantidades) foram vendidos de cada produto?
+13. Quantos itens (somando as quantidades) foram vendidos de cada produto?
 
 
 ### Nível Avançado (Questões 14-20)
