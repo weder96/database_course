@@ -64,60 +64,60 @@ CREATE TABLE LogAuditoria (
 );
 -- 4. Carga Inicial de Dados (25 AUTORES)
 INSERT INTO Autores (Nome) VALUES 
-('Isaac Asimov'),       -- 1
-('Frank Herbert'),        -- 2
-('Arthur C. Clarke'),   -- 3
-('Philip K. Dick'),     -- 4
-('William Gibson'),       -- 5
-('Robert Heinlein'),    -- 6
-('Ursula K. Le Guin'),  -- 7
-('Ray Bradbury'),         -- 8
-('George Orwell'),        -- 9
-('Aldous Huxley'),        -- 10
-('Stanislaw Lem'),        -- 11
-('H.G. Wells'),           -- 12
-('Jules Verne'),          -- 13
-('Orson Scott Card'),     -- 14
-('Dan Simmons'),          -- 15
-('Neal Stephenson'),    -- 16
-('Cixin Liu'),            -- 17
-('Andy Weir'),            -- 18
-('Margaret Atwood'),    -- 19
-('Kurt Vonnegut'),        -- 20
-('Douglas Adams'),        -- 21
-('N.K. Jemisin'),         -- 22
-('Ted Chiang'),           -- 23
-('Connie Willis'),        -- 24
-('Octavia E. Butler');     -- 25
+('Isaac Asimov'),       
+('Frank Herbert'),      
+('Arthur C. Clarke'),   
+('Philip K. Dick'),     
+('William Gibson'),       
+('Robert Heinlein'),    
+('Ursula K. Le Guin'),  
+('Ray Bradbury'),         
+('George Orwell'),        
+('Aldous Huxley'),        
+('Stanislaw Lem'),        
+('H.G. Wells'),           
+('Jules Verne'),          
+('Orson Scott Card'),     
+('Dan Simmons'),          
+('Neal Stephenson'),    
+('Cixin Liu'),          
+('Andy Weir'),          
+('Margaret Atwood'),    
+('Kurt Vonnegut'),      
+('Douglas Adams'),      
+('N.K. Jemisin'),       
+('Ted Chiang'),         
+('Connie Willis'),      
+('Octavia E. Butler');  
 GO
 
 -- 5. Carga Inicial de Dados (25 LIVROS)
 INSERT INTO Livros (Titulo, AutorID, Preco) VALUES 
-('Fundação', 1, 65.00),                               -- ID 1
-('Duna', 2, 89.90),                                 -- ID 2
-('2001: Uma Odisseia no Espaço', 3, 49.50),           -- ID 3
-('Androides Sonham com Ovelhas Elétricas?', 4, 55.00), -- ID 4
-('Neuromancer', 5, 62.00),                          -- ID 5
-('Tropas Estelares', 6, 48.00),                     -- ID 6
-('A Mão Esquerda da Escuridão', 7, 51.50),            -- ID 7
-('Fahrenheit 451', 8, 44.90),                       -- ID 8
-('1984', 9, 39.90),                                 -- ID 9
-('Admirável Mundo Novo', 10, 42.00),                -- ID 10
-('Solaris', 11, 53.00),                             -- ID 11
-('A Guerra dos Mundos', 12, 35.00),                 -- ID 12
-('Vinte Mil Léguas Submarinas', 13, 38.00),         -- ID 13
-('O Jogo do Exterminador', 14, 59.90),               -- ID 14
-('Hyperion', 15, 75.00),                            -- ID 15
-('Snow Crash', 16, 68.00),                          -- ID 16
-('O Problema dos Três Corpos', 17, 72.00),          -- ID 17
-('Perdido em Marte', 18, 54.00),                    -- ID 18
-('O Conto da Aia', 19, 47.00),                      -- ID 19
-('Matadouro 5', 20, 49.00),                         -- ID 20
-('O Guia do Mochileiro das Galáxias', 21, 33.00),   -- ID 21
-('A Quinta Estação', 22, 61.00),                    -- ID 22
-('História da Sua Vida e Outros Contos', 23, 58.00),-- ID 23
-('O Livro do Juízo Final', 24, 71.00),              -- ID 24
-('Kindred', 25, 56.00);                             -- ID 25
+('Fundação', 1, 65.00),                              
+('Duna', 2, 89.90),                                 
+('2001: Uma Odisseia no Espaço', 3, 49.50),         
+('Androides Sonham com Ovelhas Elétricas?', 4, 55.00), 
+('Neuromancer', 5, 62.00),                         
+('Tropas Estelares', 6, 48.00),                    
+('A Mão Esquerda da Escuridão', 7, 51.50),         
+('Fahrenheit 451', 8, 44.90),                      
+('1984', 9, 39.90),                                
+('Admirável Mundo Novo', 10, 42.00),               
+('Solaris', 11, 53.00),                            
+('A Guerra dos Mundos', 12, 35.00),                
+('Vinte Mil Léguas Submarinas', 13, 38.00),        
+('O Jogo do Exterminador', 14, 59.90),             
+('Hyperion', 15, 75.00),                           
+('Snow Crash', 16, 68.00),                         
+('O Problema dos Três Corpos', 17, 72.00),         
+('Perdido em Marte', 18, 54.00),                   
+('O Conto da Aia', 19, 47.00),                     
+('Matadouro 5', 20, 49.00),                        
+('O Guia do Mochileiro das Galáxias', 21, 33.00),  
+('A Quinta Estação', 22, 61.00),                   
+('História da Sua Vida e Outros Contos', 23, 58.00),
+('O Livro do Juízo Final', 24, 71.00),              
+('Kindred', 25, 56.00);                             
 GO
 
 -- 6. Carga Inicial de Dados (25 ESTOQUE)
